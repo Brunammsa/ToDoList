@@ -16,15 +16,15 @@
     <body class="antialiased">
         <body>
             <header class="p-3 mb-3 border-bottom">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-10">
+                <div class="container">
+                    <div class="d-flex justify-content-between">
+                        <div>
                             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                                 <img width="29" height="29" src="https://img.icons8.com/external-tal-revivo-light-tal-revivo/24/external-to-do-list-with-tick-boxes-at-left-side-grid-light-tal-revivo.png" 
                                 alt="external-to-do-list-with-tick-boxes-at-left-side-grid-light-tal-revivo"/>
                             </a>
                         </div>
-                        <div class="col-2 d-flex align-items-center dropdown text-end">
+                        <div class="d-flex align-items-center dropdown text-end">
                             <div class="font-medium px-4 text-base text-gray-800">{{ Auth::user()->name }}</div>
                             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
                                 data-bs-toggle="dropdown" aria-expanded="false">
