@@ -30,11 +30,11 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                             </a>
                             <ul class="dropdown-menu text-small" style="">
-                                <li><a class="dropdown-item" href="{{route("profile.edit")}}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{route("profile.edit")}}">{{__('Profile')}}</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="{{ route("logout")}}">Sign out</a></li>
+                                <li><a class="dropdown-item" href="{{ route("logout")}}">{{__('Log Out')}}</a></li>
                             </ul>
                         </div>
                     </div>
