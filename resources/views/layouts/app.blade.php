@@ -31,7 +31,7 @@
                 <div class="container">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <a href="{{route('dashboard')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                            <a href="{{route('task.index')}}" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
                                 <img width="39" height="39" src="https://img.icons8.com/sf-black/39/FFFFFF/todo-list.png" alt="todo-list"/>
                             </a>
                         </div>
