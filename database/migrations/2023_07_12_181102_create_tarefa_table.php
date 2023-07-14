@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
+        Schema::create('Tarefa', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
             $table->boolean('task_done')->default(false);
