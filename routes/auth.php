@@ -64,7 +64,3 @@ Route::middleware('auth')->group(function () {
     Route::post('dashboard', [TaskController::class, 'store'])
         ->name('task.store');
 });
-
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
