@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Tarefa extends Model
 {
     use HasFactory;
 
@@ -13,4 +13,6 @@ class Task extends Model
         'name',
         'task_done'
     ];
+
+    protected $table = 'Tarefa';
 }
