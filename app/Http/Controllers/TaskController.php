@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TaskFormRequest;
 use App\Models\Tarefa;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $tasks = Tarefa::query()->orderBy('name')->get();
         
@@ -23,7 +24,7 @@ class TaskController extends Controller
 
         $taskName->save();
 
-        return to_route('dashboard');
+        return to_route('task.store');
     }
 
     public function edit(string $id)
@@ -36,8 +37,9 @@ class TaskController extends Controller
         //
     }
 
-    public function destroy(string $id)
-    {
-        //
+    public function destroy(int $task)
+    {   
+        Tarefa::find($task)->delete();;
+        return to_route('task.index');
     }
 }
