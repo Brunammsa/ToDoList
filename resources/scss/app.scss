@@ -5,9 +5,18 @@ body {
 }
 
 $btn-close-bg: url('https://img.icons8.com/windows/29/delete-forever.png');
-$btn-close-sz: 90% 90%;
+$btn-close-sz: 100% 100%;
 
 .btn-close {
     background-image: $btn-close-bg;
     background-size: $btn-close-sz;
 }
+
+
+// $edit-button: url('https://img.icons8.com/pulsar-line/20/create-new.png');
+// $edit-button-sz: 200% 100%;
+
+// .edit-button {
+//     background-image: $edit-button;
+//     background-size: $edit-button-sz;
+// }
