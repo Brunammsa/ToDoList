@@ -29,12 +29,28 @@
                     <h6>Excluir</h6>
                 </div>
             </div>
+            <div>
+                <ul class="list-group mt-5">
+                    @foreach ($tasks as $task)
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            {{ $task->name }}
+                        </div>
+                        <div>
+                            <form action="{{route('task.destroy', $task->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn-close" aria-label="close"></button>
+                            </form>
+                        </div>
+
+                    </li>
+
+                    @endforeach
+                </ul>
+            </div>
         </div>
     </div>
     
-    <ul class="list-group">
-        @foreach ($tasks as $task)
-            <li class="list-group-item">{{ $task->name }}</li>
-        @endforeach
-    </ul>
+
 </x-app-layout>
