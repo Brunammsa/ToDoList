@@ -30,24 +30,42 @@
                 </div>
             </div>
             <div>
-                <ul class="list-group mt-5">
+                <ol class="list-group list-group-numbered mt-5">
                     @foreach ($tasks as $task)
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <div>
-                            {{ $task->name }}
+                    <li class="list-group-item d-flex align-items-center">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-9 text-start d-flex align-items-center">
+                                    {{ $task->name }}
+                                </div>
+                                <div class="form-check col-1 d-flex align-items-center">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault"></label>
+                                  </div>
+                                <div class="col-1 text-end">
+                                    <form action="{{route('task.update', $task->id)}}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+        
+                                        <button type="submit" class="btn">
+                                            <img width="20" height="21" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-edit-interface-kiranshastry-lineal-kiranshastry-1.png" alt="external-edit-interface-kiranshastry-lineal-kiranshastry-1"/>
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="col-1 text-end d-flex align-items-center">
+                                    <form action="{{route('task.destroy', $task->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+        
+                                        <button type="submit" class="btn-close" aria-label="close"></button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <form action="{{route('task.destroy', $task->id)}}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn-close" aria-label="close"></button>
-                            </form>
-                        </div>
-
                     </li>
 
                     @endforeach
-                </ul>
+                </ol>
             </div>
         </div>
     </div>
