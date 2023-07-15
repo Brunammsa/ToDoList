@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->boolean('task_done')->default(false);
             $table->timestampsTz();
-            $table->softDeletesTz();
+            $table->softDeletes();
         });
     }
 
