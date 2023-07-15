@@ -39,7 +39,8 @@ class TaskController extends Controller
 
     public function destroy(int $task)
     {   
-        Tarefa::find($task)->delete();;
+        Tarefa::find($task)->delete();
+        
         return to_route('task.index');
     }
 }
