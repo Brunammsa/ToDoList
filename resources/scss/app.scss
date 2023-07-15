@@ -3,3 +3,11 @@
 body {
     background-color:steelblue;
 }
+
+$btn-close-bg: url('https://img.icons8.com/windows/29/delete-forever.png');
+$btn-close-sz: 90% 90%;
+
+.btn-close {
+    background-image: $btn-close-bg;
+    background-size: $btn-close-sz;
+}
