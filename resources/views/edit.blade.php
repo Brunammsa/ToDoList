@@ -6,7 +6,7 @@
         <div class="container mt-5">
             <div class="row">
                 <label for="name" class=" mb-4">Editando a série {{$task->name}}:</label>
-                <input type="text" autofocus id="name" name="name" class="form-control">
+                <input type="text" autofocus name="name" class="form-control">
             </div>
             <button type="submit" class="mt-4 btn btn-outline-light btn-sm">Salvar</button>
         </div>
