@@ -45,14 +45,16 @@
                         {{ $task->name }}
                     </div>
                     <div class="col-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input class="checkbox" type="checkbox" id="{{$task->id}}"
+                        @if ($task->task_done)
+                            checked
+                        @endif>
+
                     </div>
                     <div class="col-1">
                         <form action="{{route('task.update', $task->id)}}" method="POST">
                             @csrf
                             @method('PUT')
-
                             <a href="{{route('task.edit', $task->id)}}" type="submit" class="btn p-0">
                                 <img width="20" height="20" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/external-edit-interface-kiranshastry-lineal-kiranshastry-1.png" alt="external-edit-interface-kiranshastry-lineal-kiranshastry-1"/>
                             </a>
@@ -71,4 +73,16 @@
             @endforeach
         </ul>
     </div>
+
+    <script>
+        let checkboxes = document.getElementsByClassName('checkbox');
+
+        for (let checkbox of checkboxes) {
+            checkbox.addEventListener('click', function() {
+                fetch(`/api/toggle/${this.id}`, {
+                    method: 'post'
+                });
+            });
+        }
+    </script>
 </x-app-layout>
