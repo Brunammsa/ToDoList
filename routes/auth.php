@@ -67,6 +67,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('dashboard/{task}', [TaskController::class, 'destroy'])
         ->whereNumber('task')->name('task.destroy');
 
+    Route::get('task/edit/{task}', [TaskController::class, 'edit'])
+        ->name('task.edit');
+
     Route::put('dashboard/{task}', [TaskController::class, 'update'])
         ->name('task.update');
 
