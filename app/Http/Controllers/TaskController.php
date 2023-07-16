@@ -27,14 +27,21 @@ class TaskController extends Controller
         return to_route('task.store');
     }
 
-    public function edit(string $id)
+    public function edit(Tarefa $task)
     {
-        //
+        return view('edit', [
+            'task' => $task
+        ]);
     }
 
-    public function update(TaskFormRequest $request, string $id)
+    public function update($task, TaskFormRequest $request)
     {
-        //
+        $tarefa = Tarefa::find($task);
+        $tarefa->name = $request->name;
+        
+        $tarefa->save();
+
+        return to_route('task.index');
     }
 
     public function destroy(int $task)
