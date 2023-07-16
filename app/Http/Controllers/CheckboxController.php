@@ -7,8 +7,10 @@ use Illuminate\Http\Response;
 
 class CheckboxController extends Controller
 {
-    public function toggle(Tarefa $tarefa):Response
+    public function toggle(Tarefa $tarefa, $task):Response
     {
+        $tarefa = Tarefa::find($task);
+        
         $tarefa->task_done = !$tarefa->task_done;
         $tarefa->save();
 
