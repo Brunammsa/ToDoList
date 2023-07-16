@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::put('toggle/{task}', [CheckboxController::class, 'toggle']);
+Route::post('toggle/{task}', [CheckboxController::class, 'toggle']);
